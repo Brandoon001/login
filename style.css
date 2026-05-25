@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --primary-color: #0f172a;
+    --card-color: #1e293b;
+    --border-color: #334155;
+    --box-shadow-color: rgba(0, 0, 0, 0.302);
+    --box-shadow-color-secondary: rgba(16, 185, 129, 0.3);
+    --border-color-secondary: #ffffff0d;
+    --accent-color: #10b981;
+    --accent-hover-color: rgb(51, 65, 85);
+    --text-color:#f8fafc;
+    --text-color-secondary: #94a6b8;
+    --text-color-placeholder: #94a3b880;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--primary-color);
+}
+
+#left-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    height: 100vh;
+}
+
+#left-side h1 {
+    color: var(--accent-color);
+    font-size: 3vw;
+}
+
+#left-side img {
+    width: 35vw
+}
+
+#right-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    height: 100vh;
+}
+
+.card {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background: var(--card-color);
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px var(--box-shadow-color);
+    border: 1px solid var(--border-color);
+}
+
+.card h1 {
+    color: var(--accent-color);
+}
+
+.textfield {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+.textfield input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: var(--primary-color);
+    color: var(--text-color);
+    font-size: 12pt;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.textfield label {
+    color: var(--text-color-secondary);
+    font-size: 12pt;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.textfield input::placeholder {
+    color: var(--text-color-placeholder);
+}
+
+.textfield input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0px 10px 8px var(--box-shadow-color-secondary);
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding-right: 45px;
+}
+
+.input-wrapper i {
+    position: absolute;
+    right: 15px;
+    color: var(--text-color-secondary);
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    user-select: none;
+}
+
+.input-wrapper i:hover {
+    color: var(--accent-color);
+}
+
+button {
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 10px;
+    background: var(--accent-color);
+    color: var(--primary-color);
+    font-size: 12pt;
+    font-weight: bold;
+    letter-spacing: 2px;
+    box-shadow: 0px 5px 20px var(--border-color-secondary);
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background: var(--accent-hover-color);
+    color: var(--text-color);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+@media only screen and (max-width: 950px) {
+    .card {
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .main-principal {
+        flex-direction: column;
+    }
+    #left-side h1{
+        display: none;
+    }
+    #left-side {
+            width: 100vw;
+            height: auto;
+    }
+    #right-side {
+        width: 100vw;
+        height: auto;
+    }
+    #left-side img {
+        width: 50vw;
+    }
+    .card {
+        width: 90% ;
+    }
+}
